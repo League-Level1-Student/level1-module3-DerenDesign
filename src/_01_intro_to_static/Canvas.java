@@ -53,11 +53,14 @@ public class Canvas {
 
         gamePanel.repaint();
         frame.pack();
+        
     }
 
     public void addCircle(Circle circle) {
+     	
         circles.add(circle);
-
+        
+        
         // Must place after adding new circle
         // no size - 1 to number starting from 1
         final int num = circles.size();
@@ -70,13 +73,14 @@ public class Canvas {
 
         JLabel colorSliderLabel = new JLabel("#" + num + " Color " + String.format("%3s", colorSlider.getValue()));
         JLabel radiusSliderLabel = new JLabel("#" + num + " Radius " + String.format("%3s", radiusSlider.getValue()));
-
+        
         colorSlider.addChangeListener((e) -> {
             int value = colorSlider.getValue();
             colorSliderLabel.setText("#" + num + " Color" + String.format("%3s", value));
 
             circles.get(num-1).color = new Color(value, value, value);
             frame.repaint();
+            
         });
 
         radiusSlider.addChangeListener((e) -> {
@@ -86,11 +90,12 @@ public class Canvas {
             circles.get(num-1).radius = value;
             frame.repaint();
         });
-
+        
         sliderPanel.add(radiusSliderLabel);
         sliderPanel.add(radiusSlider);
         sliderPanel.add(colorSliderLabel);
         sliderPanel.add(colorSlider);
         frame.pack();
+        
     }
 }

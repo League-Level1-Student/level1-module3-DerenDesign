@@ -24,6 +24,6 @@ public class Smiley extends JLabel {
 	}
 	
 	public static void setColor(String newColor) {
-		color = newColor;
+		color = Smiley.YELLOW;
 	}
 }
