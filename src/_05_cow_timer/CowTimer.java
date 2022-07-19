@@ -53,7 +53,7 @@ public class CowTimer {
 	}
 
 	public void playSound(final String file) {
-		String fileName = "src/_07_cow_timer/" + file;
+		String fileName = "src/_05_cow_timer/" + file;
 		// Note: use .wav files
 		new Thread(new Runnable() {
 			public void run() {
